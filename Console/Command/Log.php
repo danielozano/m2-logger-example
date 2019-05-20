@@ -16,15 +16,23 @@ class Log extends Command
     protected $logger;
 
     /**
+     * @var LoggerInterface
+     */
+    protected $configurableLogger;
+
+    /**
      * Log constructor.
      * @param LoggerInterface $logger
+     * @param LoggerInterface $configurableLogger
      * @param string $name
      */
     public function __construct(
         LoggerInterface $logger,
+        LoggerInterface $configurableLogger,
         $name = null
     ) {
         $this->logger = $logger;
+        $this->configurableLogger = $configurableLogger;
         parent::__construct($name);
     }
 
@@ -35,6 +43,7 @@ class Log extends Command
     {
         $text = $input->getArgument('text');
         $this->logger->debug($text);
+        $this->configurableLogger->info($text);
     }
 
     /**
