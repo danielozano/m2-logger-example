@@ -1,0 +1,18 @@
+{
+    "name": "danielozano/m2-logger-example",
+    "description": "Magento 2 logger example",
+    "authors": [
+        {
+            "name": "Daniel Lozano",
+            "email": "dn.lozano.m@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Danielozano\\LoggerExample": ""
+        }
+    }
+}
